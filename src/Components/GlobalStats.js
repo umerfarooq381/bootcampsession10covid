@@ -29,10 +29,7 @@ export default function GlobalStats({currentScreen}) {
   useEffect(() => {
 
     async function getData() {
-
-      const proxyurl = "https://cors-anywhere.herokuapp.com/";
       const url = "https://api.thevirustracker.com/free-api?global=stats";
-      const completeurl = url;
       const response = await fetch(url);
       //debugger;
       let data = await response.json();

@@ -17,9 +17,6 @@ const useStyles = makeStyles({
 
 export default function FootNav({screenConfig}) {
   const classes = useStyles();
-  console. log(screenConfig)
-  const [value, setValue] = React.useState(0);
-
   return (
     <BottomNavigation value={screenConfig[0]} onChange={(event, newValue) => {
       console.log(newValue);

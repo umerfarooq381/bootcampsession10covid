@@ -1,11 +1,4 @@
-
-
-// import React, { useEffect, useState } from 'react';
-// import { makeStyles } from '@material-ui/core/styles';
-// import Paper from '@material-ui/core/Paper';
-// import Grid from '@material-ui/core/Grid';
-
-import AllCountriesJson from './AllCountries.json';
+//import AllCountriesJson from './AllCountries.json';
 ///////
 
 import React,{useEffect,useState} from 'react';
@@ -56,22 +49,17 @@ export default function AllCountries() {
     async function getData() {
 
       debugger;
-      const proxyurl = "https://cors-anywhere.herokuapp.com/";
       const url = "https://api.thevirustracker.com/free-api?countryTotals=ALL";
-      const completeurl = url;
-      // const response = await fetch(url);
-      // let data = await response.json();
-      const data = AllCountriesJson; // require('./AllCountries.json');
+      const response = await fetch(url);
+      let data = await response.json();
+      //const data = AllCountriesJson; // require('./AllCountries.json');
       let dataOrg = data.countryitems[0];
-      console.log(dataOrg);
       Object.keys(dataOrg).forEach((key,index) => {
         delete dataOrg[key].source;
       })
       dataOrg = JSON.parse(JSON.stringify(dataOrg))// JSON.parse(dataOrg)
 
-    /  setGlobalData(Object.values(dataOrg))
-    //   console.log("single object: ")
-    //   console.log(data1);
+      setGlobalData(Object.values(dataOrg))
     }
     getData();
   }
