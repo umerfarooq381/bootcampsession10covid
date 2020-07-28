@@ -38,4 +38,4 @@ jobs:
       run: npm install -g surge
     
     - name: deploying on surge
-      run: surge ./build covidTrackerApp.surge.sh --token ${{secrets.A5SECRET_TOKEN}}
+      run: surge ./build http://covidtrackerappbyumer.surge.sh/ --token ${{secrets.A5SECRET_TOKEN}}
