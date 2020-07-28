@@ -45,6 +45,7 @@ export default function GlobalStats({currentScreen}) {
     , [])
   return (
     <div className={classes.root}>
+      <h2>Global Statistics</h2>
       <Grid container spacing={3}>
 
 {
@@ -54,7 +55,6 @@ export default function GlobalStats({currentScreen}) {
           <Paper className={classes.paper} elevation={3}>
             <h3 className={classes.title}>{key.replace(/_/g,' ')}</h3>
             <h3>{globalData[key]}</h3>
-            
             </Paper>
         </Grid>
     )

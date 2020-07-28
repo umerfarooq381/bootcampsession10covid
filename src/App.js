@@ -7,7 +7,7 @@ function App() {
   const screenConfig = useState(0);
   return (
     <div>
-      <NavBar />
+      <NavBar screenConfig={screenConfig} />
       <InfoPanel currentScreen={screenConfig[0]} />
       <FootNav  screenConfig={screenConfig} />
     </div>
